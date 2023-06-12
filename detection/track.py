@@ -7,7 +7,8 @@ import numpy as np
 import cv2
 from types import SimpleNamespace
 
-from trackers.multi_tracker import create_tracker
+
+from trackers.multi_tracker import create_tracker,get_tracker_config
 from trackers.utils import ROOT, WEIGHTS
 from trackers.utils.checks import TestRequirements
 from trackers.utils import logger as LOGGER

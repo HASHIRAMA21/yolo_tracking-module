@@ -24,7 +24,7 @@ from trackers.utils import ROOT, WEIGHTS
 from track import run
 
 from trackers.utils import logger
-from ultralytics.yolo.utils.checks import check_requirements, print_args
+from yolov8.ultralytics.yolo.utils.checks import check_requirements, print_args
 
 
 
