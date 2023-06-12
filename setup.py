@@ -27,7 +27,7 @@ setup(
     description=('SOTA tracking methods for detection, segmentation and pose estimation models.'),
     long_description=README,
     long_description_content_type='text/markdown',
-    url='https://github.com/mikel-brostrom/yolov8_tracking',
+    url='https://github.com/HASHIRAMA21/yolo_tracking-module',
     project_urls={
         'Bug Reports': 'https://github.com/HASHIRAMA21/yolo_tracking-module/issues',
         'Source': 'https://github.com/HASHIRAMA21/yolo_tracking-module'},

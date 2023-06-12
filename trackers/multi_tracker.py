@@ -12,14 +12,13 @@ def get_tracker_config(tracker_type):
         (tracker_type + '.yaml')
     return tracking_config
 
-
 def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
     with open(tracker_config, "r") as f:
         cfg = yaml.load(f.read(), Loader=yaml.FullLoader)
     cfg = SimpleNamespace(**cfg)  # easier dict acces by dot, instead of ['']
 
     if tracker_type == 'strongsort':
-        from yolo_tracking.trackers.strongsort.strong_sort import StrongSORT
+        from trackers.strongsort.strong_sort import StrongSORT
         strongsort = StrongSORT(
             reid_weights,
             device,
@@ -37,7 +36,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return strongsort
 
     elif tracker_type == 'ocsort':
-        from yolo_tracking.trackers.ocsort.ocsort import OCSort
+        from trackers.ocsort.ocsort import OCSort
         ocsort = OCSort(
             det_thresh=cfg.det_thresh,
             max_age=cfg.max_age,
@@ -51,7 +50,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return ocsort
 
     elif tracker_type == 'bytetrack':
-        from yolo_tracking.trackers.bytetrack.byte_tracker import BYTETracker
+        from trackers.bytetrack.byte_tracker import BYTETracker
         bytetracker = BYTETracker(
             track_thresh=cfg.track_thresh,
             match_thresh=cfg.match_thresh,
@@ -61,7 +60,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return bytetracker
 
     elif tracker_type == 'botsort':
-        from yolo_tracking.trackers.botsort.bot_sort import BoTSORT
+        from trackers.botsort.bot_sort import BoTSORT
         botsort = BoTSORT(
             reid_weights,
             device,
@@ -78,7 +77,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         )
         return botsort
     elif tracker_type == 'deepocsort':
-        from yolo_tracking.trackers.deepocsort.ocsort import OCSort
+        from trackers.deepocsort.ocsort import OCSort
         deepocsort = OCSort(
             reid_weights,
             device,
@@ -93,7 +92,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         )
         return deepocsort
     elif tracker_type == 'deepsort':
-        from yolo_tracking.trackers.deep_sort_pytorch.deep_sort.deep_sort import DeepSort
+        from trackers.deep_sort_pytorch.deep_sort.deep_sort import DeepSort
         from deep_sort_pytorch.utils.parser import get_configs
         cfg_deep = get_configs()
         cfg_deep.merge_from_file("trackers/deep_sort_pytorch/config/deep_sort.yaml")
