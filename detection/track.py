@@ -7,7 +7,7 @@ import numpy as np
 import cv2
 from types import SimpleNamespace
 
-from yolo_tracking.trackers.multi_tracker import create_tracker
+from trackers.multi_tracker import create_tracker
 from trackers.utils import ROOT, WEIGHTS
 from trackers.utils.checks import TestRequirements
 from trackers.utils import logger as LOGGER
@@ -16,12 +16,12 @@ from trackers.utils.torch_utils import select_device
 tr = TestRequirements()
 tr.check_packages(('ultralytics',))  # install
 
-from yolo_tracking.yolov8.ultralytics.yolo.engine.model import YOLO, TASK_MAP
-from yolo_tracking.yolov8.ultralytics.yolo.utils import SETTINGS, colorstr, ops, is_git_dir, IterableSimpleNamespace
-from yolo_tracking.yolov8.ultralytics.yolo.utils.checks import check_imgsz, print_args
-from yolo_tracking.yolov8.ultralytics.yolo.utils.files import increment_path
-from yolo_tracking.yolov8.ultralytics.yolo.engine.results import Boxes
-from yolo_tracking.yolov8.ultralytics.yolo.data.utils import VID_FORMATS
+from yolov8.ultralytics.yolo.engine.model import YOLO, TASK_MAP
+from yolov8.ultralytics.yolo.utils import SETTINGS, colorstr, ops, is_git_dir, IterableSimpleNamespace
+from yolov8.ultralytics.yolo.utils.checks import check_imgsz, print_args
+from yolov8.ultralytics.yolo.utils.files import increment_path
+from yolov8.ultralytics.yolo.engine.results import Boxes
+from yolov8.ultralytics.yolo.data.utils import VID_FORMATS
 from multi_yolo_backend import MultiYolo
 from utils import write_MOT_results
 

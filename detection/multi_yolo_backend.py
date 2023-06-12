@@ -2,12 +2,12 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from yolo_tracking.trackers.utils.checks import TestRequirements
+from trackers.utils.checks import TestRequirements
 
 tr = TestRequirements()
 
-from yolo_tracking.yolov8.ultralytics.yolo.engine.results import Boxes, Results
-from yolo_tracking.trackers.utils import logger as LOGGER
+from yolov8.ultralytics.yolo.engine.results import Boxes, Results
+from trackers.utils import logger as LOGGER
 
 class MultiYolo():
     def __init__(self, model, device, args):

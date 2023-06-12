@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from yolo_tracking.yolov8.ultralytics.yolo.utils import ops
+from yolov8.ultralytics.yolo.utils import ops
 
 def write_MOT_results(txt_path, results, frame_idx, i):
     nr_dets = len(results.boxes)
