@@ -1,7 +1,8 @@
 from pathlib import Path
 import yaml
 from types import SimpleNamespace
-from utils.__init__ import TRACKERS
+from utils import TRACKERS
+#from utils.__init__ import TRACKERS
 
 
 def get_tracker_config(tracker_type):
