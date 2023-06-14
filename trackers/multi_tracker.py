@@ -12,6 +12,7 @@ def get_tracker_config(tracker_type):
         (tracker_type + '.yaml')
     return tracking_config
 
+
 def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
     with open(tracker_config, "r") as f:
         cfg = yaml.load(f.read(), Loader=yaml.FullLoader)
