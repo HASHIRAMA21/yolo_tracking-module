@@ -16,5 +16,6 @@ __all__ = '__version__', \
           'StrongSORT', 'OCSORT', 'BYTETracker', 'BoTSORT', 'DeepOCSORT', 'DeepSort'
 
 if __name__ == "__main__":
-    print()
+    trackers
+    trackers.multi_tracker
 
