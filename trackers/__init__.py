@@ -1,6 +1,8 @@
 __version__ = '10.0.14'
 
 from pathlib import Path
+import trackers
+import trackers.multi_tracker
 from trackers.strongsort.strong_sort import StrongSORT
 from trackers.deep_sort_pytorch.deep_sort.deep_sort import DeepSort
 from trackers.ocsort.ocsort import OCSort as OCSORT
@@ -12,3 +14,7 @@ from trackers.deep.reid_multibackend import ReIDDetectMultiBackend
 
 __all__ = '__version__', \
           'StrongSORT', 'OCSORT', 'BYTETracker', 'BoTSORT', 'DeepOCSORT', 'DeepSort'
+
+if __name__ == "__main__":
+    print()
+

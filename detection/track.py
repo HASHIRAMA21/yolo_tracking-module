@@ -1,12 +1,17 @@
 # https://github.com/ultralytics/ultralytics/issues/1429#issuecomment-1519239409
 
+
+import trackers
+
+(trackers.multi_tracker)
+
 from pathlib import Path
 import torch
 import argparse
 import numpy as np
 import cv2
-from types import SimpleNamespace
 
+from types import SimpleNamespace
 
 from trackers.multi_tracker import create_tracker
 from trackers.utils import ROOT, WEIGHTS
